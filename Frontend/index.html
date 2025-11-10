@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Frontend Application</title>
+    <title>WEB DE CONSULTAS</title>
     
     </head>
     <body>
+<h1>Bienvenido al Sistema de Registro</h1>        
+<P>Escribe tus datos para registrarse</P>
+<form action="register" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
 
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required><br><br>
 
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña" required><br><br>
+
+    <button type="submit">Registrar</button>
+</form>
+<ul>
+    {% for user in users_db %}
+        <li>{{ user.nombre }} {{ user.apellido }} - {{ user.email }}</li>
+    {% endfor %}
+</ul>
     </body>
 </html>
